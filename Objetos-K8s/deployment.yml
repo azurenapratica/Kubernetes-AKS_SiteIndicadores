@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: siteindicadores 
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: siteindicadores
+  template:
+    metadata:
+      labels:
+        app: siteindicadores
+    spec:
+      containers:
+        - name: siteindicadores
+          image: azurenapratica/site-indicadores-economia-2021:1
+          ports:
+          - containerPort: 80
